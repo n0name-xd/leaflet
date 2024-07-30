@@ -1,8 +1,12 @@
 "use client";
 
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 
-const MapComponent = () => {
+interface IMapComponentProps {
+  showPanorama: (filePath: any) => void;
+}
+
+const MapComponent: React.FC<IMapComponentProps> = ({ showPanorama }) => {
   return (
     <MapContainer
       center={[-80, 60]}
@@ -16,9 +20,14 @@ const MapComponent = () => {
         tileSize={450}
         noWrap={true}
       />
-      <Marker position={[-20, 40]}>
-        <Popup>ываываы</Popup>
-      </Marker>
+      <Marker
+        position={[-20, 40]}
+        eventHandlers={{
+          click: (e) => {
+            showPanorama(e);
+          },
+        }}
+      ></Marker>
     </MapContainer>
   );
 };
