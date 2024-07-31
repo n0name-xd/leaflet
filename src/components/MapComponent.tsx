@@ -20,6 +20,7 @@ const MapComponent: React.FC<IMapComponentProps> = ({ showPanorama }) => {
         tileSize={450}
         noWrap={true}
       />
+
       <Marker
         position={[-20, 40]}
         eventHandlers={{
