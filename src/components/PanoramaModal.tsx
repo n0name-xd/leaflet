@@ -10,7 +10,7 @@ export const PanoramaModal: React.FC<IPanoramaModalProps> = ({ onClick }) => {
   return (
     <div
       className="fixed top-[20%] left-[10%] w-[1300px] h-[60vh] bg-white rounded-xl"
-      style={{ zIndex: 999 }}
+      style={{ zIndex: 400 }}
     >
       <PanoramaViewer image={"/panoramas/panorama.jpg"} />
 
